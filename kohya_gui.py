@@ -67,7 +67,7 @@ def UI(**kwargs):
         launch_kwargs['inbrowser'] = inbrowser
     if share:
         launch_kwargs['share'] = share
-    interface.launch(**launch_kwargs)
+    interface.launch(share=True, **launch_kwargs)
 
 
 if __name__ == '__main__':

@@ -41,7 +41,7 @@ Write-Output "Repeats: $repeats"
 cd D:\kohya_ss
 .\venv\Scripts\activate
 
-accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
+python3 --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --v2 `
     --pretrained_model_name_or_path=$pretrained_model_name_or_path `
     --train_data_dir=$data_dir `

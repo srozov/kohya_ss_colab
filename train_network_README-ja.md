@@ -58,7 +58,7 @@ cloneofsimo氏のリポジトリ、およびd8ahazard氏の[Dreambooth Extension
 以下はコマンドラインの例です。
 
 ```
-accelerate launch --num_cpu_threads_per_process 1 train_network.py 
+python3 --num_cpu_threads_per_process 1 train_network.py 
     --pretrained_model_name_or_path=<.ckptまたは.safetensordまたはDiffusers版モデルのディレクトリ> 
     --dataset_config=<データ準備で作成した.tomlファイル> 
     --output_dir=<学習したモデルの出力先フォルダ>  

@@ -72,7 +72,7 @@ Run the script. The maximally memory-saving command looks like this (actually ty
 *The command for learning additional networks such as LoRA is ``train_network.py`` instead of ``train_db.py``. You will also need additional network_\* options, so please refer to LoRA's guide.
 
 ```
-accelerate launch --num_cpu_threads_per_process 8 train_db.py
+python3 --num_cpu_threads_per_process 8 train_db.py
      --pretrained_model_name_or_path=<directory of .ckpt or .safetensord or Diffusers model>
      --train_data_dir=<training data directory>
      --reg_data_dir=<regularized image directory>
@@ -108,7 +108,7 @@ Cache VAE output with cache_latents option to save memory.
 If you have a certain amount of memory, specify it as follows, for example.
 
 ```
-accelerate launch --num_cpu_threads_per_process 8 train_db.py
+python3 --num_cpu_threads_per_process 8 train_db.py
      --pretrained_model_name_or_path=<directory of .ckpt or .safetensord or Diffusers model>
      --train_data_dir=<training data directory>
      --reg_data_dir=<regularized image directory>
@@ -129,7 +129,7 @@ Remove gradient_checkpointing to speed up (memory usage will increase). Increase
 An example of using bucketing (see below) and using augmentation (see below) looks like this:
 
 ```
-accelerate launch --num_cpu_threads_per_process 8 train_db.py
+python3 --num_cpu_threads_per_process 8 train_db.py
      --pretrained_model_name_or_path=<directory of .ckpt or .safetensord or Diffusers model>
      --train_data_dir=<training data directory>
      --reg_data_dir=<regularized image directory>
