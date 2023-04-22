@@ -4,7 +4,7 @@ import subprocess
 import os
 from .common_gui import get_folder_path, add_pre_postfix
 
-PYTHON = 'python3' if os.name == 'posix' else './venv/Scripts/python.exe'
+PYTHON = 'python3' if os.name == 'posix' else 'python'
 
 
 def caption_images(

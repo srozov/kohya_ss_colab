@@ -34,7 +34,7 @@ DreamBoothとは、画像生成モデルに特定の主題を追加学習し、�
 スクリプトを実行します。最大限、メモリを節約したコマンドは以下のようになります（実際には1行で入力します）。それぞれの行を必要に応じて書き換えてください。12GB程度のVRAMで動作するようです。
 
 ```
-accelerate launch --num_cpu_threads_per_process 1 train_db.py 
+python3 --num_cpu_threads_per_process 1 train_db.py 
     --pretrained_model_name_or_path=<.ckptまたは.safetensordまたはDiffusers版モデルのディレクトリ> 
     --dataset_config=<データ準備で作成した.tomlファイル> 
     --output_dir=<学習したモデルの出力先フォルダ>  
@@ -101,7 +101,7 @@ Diffusers版では5e-6ですがStable Diffusion版は1e-6ですので、上の�
 解像度やバッチサイズをオプションで指定します。コマンドラインの例は以下の通りです。
 
 ```
-accelerate launch --num_cpu_threads_per_process 1 train_db.py 
+python3 --num_cpu_threads_per_process 1 train_db.py 
     --pretrained_model_name_or_path=<.ckptまたは.safetensordまたはDiffusers版モデルのディレクトリ> 
     --train_data_dir=<学習用データのディレクトリ> 
     --reg_data_dir=<正則化画像のディレクトリ> 
@@ -149,7 +149,7 @@ no_token_paddingオプションを指定するとTokenizerの出力をpaddingし
 bucketing（後述）を利用しかつaugmentation（後述）を使う場合の例は以下のようになります。
 
 ```
-accelerate launch --num_cpu_threads_per_process 8 train_db.py 
+python3 --num_cpu_threads_per_process 8 train_db.py 
     --pretrained_model_name_or_path=<.ckptまたは.safetensordまたはDiffusers版モデルのディレクトリ> 
     --train_data_dir=<学習用データのディレクトリ> 
     --reg_data_dir=<正則化画像のディレクトリ> 
