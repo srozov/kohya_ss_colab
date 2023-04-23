@@ -8,7 +8,7 @@ from .common_gui import (
     get_file_path,
 )
 
-PYTHON = 'python3' if os.name == 'posix' else './venv/Scripts/python.exe'
+PYTHON = 'python3' if os.name == 'posix' else 'python'
 folder_symbol = '\U0001f4c2'  # 📂
 refresh_symbol = '\U0001f504'  # 🔄
 save_style_symbol = '\U0001f4be'  # 💾
