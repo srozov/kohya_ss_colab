@@ -3,7 +3,7 @@
 $env:PATH += ";$($MyInvocation.MyCommand.Path)\venv\Lib\site-packages\torch\lib"
 
 # Validate the requirements and store the exit code
-python .\tools\validate_requirements.py
+python.exe .\tools\validate_requirements.py
 
 # If the exit code is 0, read arguments from gui_parameters.txt (if it exists)
 # and run the kohya_gui.py script with the command-line arguments
@@ -14,5 +14,5 @@ if ($LASTEXITCODE -eq 0) {
     }
     $args_combo = $argsFromFile + $args
     Write-Host "The arguments passed to this script were: $args_combo"
-    python kohya_gui.py $args_combo
+    python.exe kohya_gui.py $args_combo
 }
