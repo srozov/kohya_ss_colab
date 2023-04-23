@@ -324,7 +324,7 @@ __*It is safe to rewrite the argument each time and write it to a separate metad
 ## Run training
 For example: Below are the settings for saving memory.
 ```
-accelerate launch --num_cpu_threads_per_process 8 fine_tune.py
+python3 --num_cpu_threads_per_process 8 fine_tune.py
      --pretrained_model_name_or_path=model.ckpt
      --in_json meta_lat.json
      --train_data_dir=train_data
