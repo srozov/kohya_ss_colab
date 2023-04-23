@@ -17,7 +17,7 @@ Data preparation is exactly the same as ``train_network.py``, so please refer to
 Below is an example command line (DreamBooth technique).
 
 ```
-python --num_cpu_threads_per_process 1 train_textual_inversion.py
+accelerate launch --num_cpu_threads_per_process 1 train_textual_inversion.py
      --pretrained_model_name_or_path=..\models\model.ckpt
      --train_data_dir=..\data\db\char1 --output_dir=..\ti_train1
      --resolution=448,640 --train_batch_size=1 --learning_rate=1e-4

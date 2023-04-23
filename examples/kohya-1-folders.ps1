@@ -32,7 +32,7 @@ Write-Output "Repeats: $repeats"
 
 .\venv\Scripts\activate
 
-python --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
+accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --pretrained_model_name_or_path=$pretrained_model_name_or_path `
     --train_data_dir=$data_dir `
     --output_dir=$output_dir `
@@ -51,7 +51,7 @@ python --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     
 # 2nd pass at half the dataset repeat value
 
-python --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
+accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --pretrained_model_name_or_path=$output_dir"\last.ckpt" `
     --train_data_dir=$data_dir `
     --output_dir=$output_dir"2" `
@@ -68,7 +68,7 @@ python --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --dataset_repeats=$([Math]::Ceiling($dataset_repeats/2)) `
     --save_precision="fp16"
     
-    python --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
+    accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process train_db.py `
     --pretrained_model_name_or_path=$output_dir"\last.ckpt" `
     --train_data_dir=$data_dir `
     --output_dir=$output_dir"2" `

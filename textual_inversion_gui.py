@@ -440,7 +440,7 @@ def train_model(
     lr_warmup_steps = round(float(int(lr_warmup) * int(max_train_steps) / 100))
     print(f'lr_warmup_steps = {lr_warmup_steps}')
 
-    run_cmd = f'python --num_cpu_threads_per_process={num_cpu_threads_per_process} "train_textual_inversion.py"'
+    run_cmd = f'accelerate launch --num_cpu_threads_per_process={num_cpu_threads_per_process} "train_textual_inversion.py"'
     if v2:
         run_cmd += ' --v2'
     if v_parameterization:

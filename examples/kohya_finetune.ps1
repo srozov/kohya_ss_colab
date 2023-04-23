@@ -95,7 +95,7 @@ Write-Host("lr_warmup_steps = $lr_warmup_steps")
 
 Write-Host("$v2 $v_model")
 
-python --num_cpu_threads_per_process $num_cpu_threads_per_process $kohya_finetune_repo_path\script\fine_tune.py `
+accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process $kohya_finetune_repo_path\script\fine_tune.py `
     $v2 `
     $v_model `
     --pretrained_model_name_or_path=$pretrained_model_name_or_path `
