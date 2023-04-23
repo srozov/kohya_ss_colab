@@ -1,3 +1,3 @@
-# Kohya's GUI
+# Kohya's GUI GColab version
 
-[![LoRA Part 1 Tutorial](https://i.imgur.com/jfcNKgu.png)](https://colab.research.google.com/github/AlexSgt/kohya_ss_colab/blob/master/Colab_GUI.ipynb)
+[![Kohya's GUI GColab version](https://i.imgur.com/hqhth3U.png)](https://colab.research.google.com/github/AlexSgt/kohya_ss_colab/blob/master/Colab_GUI.ipynb)
