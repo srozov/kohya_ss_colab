@@ -19,7 +19,7 @@
 ``train_textual_inversion.py`` を用います。以下はコマンドラインの例です（DreamBooth手法）。
 
 ```
-accelerate launch --num_cpu_threads_per_process 1 train_textual_inversion.py 
+python --num_cpu_threads_per_process 1 train_textual_inversion.py 
     --dataset_config=<データ準備で作成した.tomlファイル> 
     --output_dir=<学習したモデルの出力先フォルダ>  
     --output_name=<学習したモデル出力時のファイル名> 

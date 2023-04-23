@@ -53,7 +53,7 @@ Stable Diffusionでは最大75トークン（開始・終了を含むと77トー
 たとえば以下のように実行します。以下は省メモリ化のための設定です。それぞれの行を必要に応じて書き換えてください。
 
 ```
-accelerate launch --num_cpu_threads_per_process 1 fine_tune.py 
+python --num_cpu_threads_per_process 1 fine_tune.py 
     --pretrained_model_name_or_path=<.ckptまたは.safetensordまたはDiffusers版モデルのディレクトリ> 
     --output_dir=<学習したモデルの出力先フォルダ>  
     --output_name=<学習したモデル出力時のファイル名> 
@@ -103,7 +103,7 @@ accelerate launch --num_cpu_threads_per_process 1 fine_tune.py
 解像度やバッチサイズをオプションで指定します。コマンドラインの例は以下の通りです。
 
 ```
-accelerate launch --num_cpu_threads_per_process 1 fine_tune.py 
+python --num_cpu_threads_per_process 1 fine_tune.py 
     --pretrained_model_name_or_path=model.ckpt 
     --in_json meta_lat.json 
     --train_data_dir=train_data 

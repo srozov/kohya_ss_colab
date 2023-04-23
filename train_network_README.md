@@ -45,7 +45,7 @@ The learning rate should be set to about 1e-4, which is higher than normal Dream
 Below is an example command line (DreamBooth technique).
 
 ```
-accelerate launch --num_cpu_threads_per_process 12 train_network.py
+python --num_cpu_threads_per_process 12 train_network.py
      --pretrained_model_name_or_path=..\models\model.ckpt
      --train_data_dir=..\data\db\char1 --output_dir=..\lora_train1
      --reg_data_dir=..\data\db\reg1 --prior_loss_weight=1.0

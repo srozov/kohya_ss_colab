@@ -43,7 +43,7 @@ $repeats = $image_num * $dataset_repeats
 $max_train_set = [Math]::Ceiling($repeats / $train_batch_size * $epoch)
 
 
-accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process D:\kohya_ss\finetune\fine_tune.py `
+python --num_cpu_threads_per_process $num_cpu_threads_per_process D:\kohya_ss\finetune\fine_tune.py `
     --pretrained_model_name_or_path=$pretrained_model_name_or_path `
     --in_json $train_dir"\meta_lat.json" `
     --train_data_dir=$train_dir"\"$training_folder `
@@ -58,7 +58,7 @@ accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process D:\
     --train_text_encoder `
     --save_precision="fp16"
 
-accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process D:\kohya_ss\finetune\fine_tune.py `
+python --num_cpu_threads_per_process $num_cpu_threads_per_process D:\kohya_ss\finetune\fine_tune.py `
     --pretrained_model_name_or_path=$train_dir"\fine_tuned\last.ckpt" `
     --in_json $train_dir"\meta_lat.json" `
     --train_data_dir=$train_dir"\"$training_folder `
@@ -74,7 +74,7 @@ accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process D:\
 
 # Hypernetwork
 
-accelerate launch --num_cpu_threads_per_process $num_cpu_threads_per_process D:\kohya_ss\finetune\fine_tune.py `
+python --num_cpu_threads_per_process $num_cpu_threads_per_process D:\kohya_ss\finetune\fine_tune.py `
     --pretrained_model_name_or_path=$pretrained_model_name_or_path `
     --in_json $train_dir"\meta_lat.json" `
     --train_data_dir=$train_dir"\"$training_folder `
