@@ -421,7 +421,7 @@ def train_model(
     subfolders = [
         f
         for f in os.listdir(train_data_dir)
-        if os.path.isdir(os.path.join(train_data_dir, f))
+        if os.path.isdir(os.path.join(train_data_dir, f)) and f != '.ipynb_checkpoints'
     ]
 
     total_steps = 0
